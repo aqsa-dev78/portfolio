@@ -22,15 +22,16 @@ export default function About() {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-3xl font-bold mb-2 text-center">About Me</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
+          <div className="w-20 h-1 bg-[#298248] mx-auto mb-8"></div>
 
           <div className="grid md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-1">
               <div className="relative w-full aspect-square max-w-xs mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 rounded-lg transform rotate-3"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[rgba(2,90,74,1)] via-[rgba(2,90,74,1)] to-[rgba(2,90,74,1)] rounded-lg transform rotate-3 opacity-70"></div>
+
                 <img
                   src="/profile1.jpeg"
-                  alt="Ambar Zara"
+                  alt="Aqsa Iftikhar"
                   className="relative z-10 w-full h-full object-cover rounded-lg shadow-lg transform -rotate-3 transition-transform hover:rotate-0 duration-300"
                 />
               </div>
@@ -38,9 +39,9 @@ export default function About() {
 
             <div className="md:col-span-2">
               <Card className="p-6 bg-background/50 backdrop-blur-sm">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Who am I?</h3>
+                <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-[#8FFFC1] via-[#72F5D2] to-[#A8FFE0] bg-clip-text text-transparent">Who am I?</h3>
                 <p className="text-foreground/80 mb-4">
-                  I'm Ambar Zara, a Junior Full Stack Developer with over 6 months of industrial experience. I'm
+                  I'm Aqsa Iftikhar, a Junior Full Stack Developer with over 6 months of industrial experience. I'm
                   passionate about creating efficient, user-friendly web applications using modern technologies.
                 </p>
                 <p className="text-foreground/80 mb-4">
@@ -54,10 +55,10 @@ export default function About() {
                 </p>
 
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild variant="outline">
+                  <Button asChild  className="bg-[#0A140E] hover:bg-[#0A140E] border  border-[1px] border-[#CBFFDB] text-[#CBFFDE]" variant="outline">
                     <a href="#experience">My Experience</a>
                   </Button>
-                  <Button asChild>
+                  <Button asChild className="bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]">
                     <a href="#contact">Contact Me</a>
                   </Button>
                 </div>

@@ -43,16 +43,17 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-4">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="text-foreground/80 hover:text-primary transition-colors">
+            <Link key={link.name} href={link.href} className="text-foreground/80 hover:text-[#CBFFDB] transition-colors">
               {link.name}
             </Link>
           ))}
           <ThemeToggle />
-          <Button asChild>
-            <a href="#" id="resume-button">
-              Resume
-            </a>
-          </Button>
+          <Button asChild className="bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)] text-white px-6">
+  <a href="#" id="resume-button">
+    Resume
+  </a>
+</Button>
+
         </nav>
 
         {/* Mobile Navigation Toggle */}

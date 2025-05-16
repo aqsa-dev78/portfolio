@@ -11,16 +11,16 @@ export default function Logo() {
               <stop offset="100%" stopColor="hsl(var(--primary) / 0.8)" />
             </linearGradient>
           </defs>
-          <rect x="10" y="10" width="80" height="80" rx="10" fill="url(#logoGradient)" />
+          <rect x="10" y="10" width="80" height="80" rx="10" fill="#298248"  />
           <text x="50" y="65" fontSize="50" fontWeight="bold" textAnchor="middle" fill="white">
             A
           </text>
           <text x="65" y="75" fontSize="30" fontWeight="bold" textAnchor="middle" fill="white">
-            Z
+            I
           </text>
         </svg>
       </div>
-      <span className="ml-2 text-xl font-bold">Ambar Zara</span>
+      <span className="ml-2 text-xl font-bold">Aqsa Iftikhar</span>
     </Link>
   )
 }

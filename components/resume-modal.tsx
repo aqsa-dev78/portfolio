@@ -32,7 +32,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4">
       <div className="relative w-full max-w-4xl max-h-[90vh] overflow-auto bg-background border border-border rounded-lg shadow-lg">
         <div className="sticky top-0 z-10 flex items-center justify-between p-4 bg-background border-b">
-          <h2 className="text-xl font-bold">Ambar Zara - Resume</h2>
+          <h2 className="text-xl font-bold">Aqsa Iftikhar - Resume</h2>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" asChild>
               <a href="/resume.pdf" download>
@@ -50,17 +50,17 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
         <div className="p-6">
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-primary mb-2">Ambar Zara</h1>
+            <h1 className="text-3xl font-bold text-primary mb-2">Aqsa Iftikhar</h1>
             <h2 className="text-xl font-medium mb-4">Full Stack Developer</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
               <div className="flex items-center">
                 <Mail size={16} className="mr-2 text-primary" />
-                <span>ambarzara58@gmail.com</span>
+                <span>aqsaiftkhar868@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Phone size={16} className="mr-2 text-primary" />
-                <span>+92 301 722 9367</span>
+                <span>+92 303 416 9123</span>
               </div>
               <div className="flex items-center">
                 <MapPin size={16} className="mr-2 text-primary" />
@@ -68,7 +68,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               </div>
               <div className="flex items-center">
                 <ExternalLink size={16} className="mr-2 text-primary" />
-                <span>github.com/ambarzara2772</span>
+                <span>github.com/aqsaiftkhar</span>
               </div>
             </div>
           </div>

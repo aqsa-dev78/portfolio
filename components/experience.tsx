@@ -44,6 +44,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-20">
+      
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -95,7 +96,7 @@ export default function Experience() {
                                 href={project.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-primary hover:underline"
+                                className="text-[#CBFFDE] hover:underline"
                               >
                                 {project.name}
                               </a>
