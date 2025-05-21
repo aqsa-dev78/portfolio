@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 export default function About() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <section id="about" className="py-20 bg-muted/30">
@@ -22,7 +22,7 @@ export default function About() {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-3xl font-bold mb-2 text-center">About Me</h2>
-          <div className="w-20 h-1 bg-[#298248] mx-auto mb-8"></div>
+          <div className="w-20 h-1 bg-[#004E3F] mx-auto mb-8"></div>
 
           <div className="grid md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-1">
@@ -39,26 +39,40 @@ export default function About() {
 
             <div className="md:col-span-2">
               <Card className="p-6 bg-background/50 backdrop-blur-sm">
-                <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-[#8FFFC1] via-[#72F5D2] to-[#A8FFE0] bg-clip-text text-transparent">Who am I?</h3>
+                <h3 className="text-xl font-semibold mb-4 text-[#004E3F]">
+                  Who am I?
+                </h3>
                 <p className="text-foreground/80 mb-4">
-                  I'm Aqsa Iftikhar, a Junior Full Stack Developer with over 6 months of industrial experience. I'm
-                  passionate about creating efficient, user-friendly web applications using modern technologies.
+                  I'm Aqsa Iftkhar, a Full Stack Developer with 1 year of
+                  industrial experience. I'm passionate about building
+                  efficient, responsive, and user-friendly web applications
+                  using modern technologies.
                 </p>
                 <p className="text-foreground/80 mb-4">
-                  My journey in web development started during my BSCS studies at Government College University
-                  Faisalabad (GCUF), where I developed a strong foundation in computer science principles and
-                  programming.
+                  My professional journey began after completing a 6-month Full
+                  Stack Development course from PNY training center at the Arfa
+                  Karim Tower, where I gained hands-on experience with both
+                  front-end and back-end technologies.
                 </p>
                 <p className="text-foreground/80 mb-6">
-                  I specialize in front-end technologies like React, Next.js, and various CSS frameworks, as well as
-                  back-end technologies including Node.js, Express, and Adonis.js.
+                  Currently, I'm pursuing a BSCS degree from Virtual University
+                  (started on 05/02/2023). I specialize in front-end tools like
+                  React, Next.js, and CSS frameworks, as well as back-end
+                  technologies including Node.js, Express, and Adonis.js.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild  className="bg-[#0A140E] hover:bg-[#0A140E] border  border-[1px] border-[#CBFFDB] text-[#CBFFDE]" variant="outline">
+                  <Button
+                    asChild
+                    className="bg-[#0A140E] hover:bg-[#0A140E] border  border-[1px] border-[#CBFFDB] text-[#CBFFDE]"
+                    variant="outline"
+                  >
                     <a href="#experience">My Experience</a>
                   </Button>
-                  <Button asChild className="bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]">
+                  <Button
+                    asChild
+                    className=" border border-gray-500 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]"
+                  >
                     <a href="#contact">Contact Me</a>
                   </Button>
                 </div>
@@ -68,6 +82,5 @@ export default function About() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

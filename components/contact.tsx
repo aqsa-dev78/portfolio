@@ -25,7 +25,6 @@ export default function Contact() {
     subject: "",
     message: "",
   })
-
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -33,27 +32,50 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out. I'll get back to you soon.",
-      })
+      });
 
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
-      })
-
-      setIsSubmitting(false)
-    }, 1500)
+      });
+    } else {
+      toast({
+        title: "Something went wrong",
+        description: result.error || "Failed to send message",
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again later.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
   }
+};
 
   return (
     <section id="contact" className="py-20">
@@ -65,7 +87,7 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-2 text-center">Get In Touch</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
+          <div className="w-20 h-1 bg-[#004E3F] mx-auto mb-12"></div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="p-6 bg-background/50 backdrop-blur-sm">
@@ -73,28 +95,28 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-4">
-                    <Phone size={20} className="text-primary" />
+                  <div className="bg-[#004E3F]/10 p-3 rounded-full mr-4">
+                    <Phone size={20} className="text-[#004E3F]" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <p className="text-foreground/70">+92 301 722 9367</p>
+                    <p className="text-foreground/70">+92 303 416 9123</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-4">
-                    <Mail size={20} className="text-primary" />
+                  <div className="bg-[#004E3F]/10 p-3 rounded-full mr-4">
+                    <Mail size={20} className="text-[#004E3F]" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-foreground/70">ambarzara58@gmail.com</p>
+                    <p className="text-foreground/70">aqsaiftkhar868@gmail.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-4">
-                    <MapPin size={20} className="text-primary" />
+                  <div className="bg-[#004E3F]/10 p-3 rounded-full mr-4">
+                    <MapPin size={20} className="text-[#004E3F]" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Location</h4>
@@ -107,10 +129,10 @@ export default function Contact() {
                 <h4 className="font-medium mb-4">Follow Me</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://github.com/ambarzara2772"
+                    href="https://github.com/aqsaiftkhar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-muted hover:bg-primary/20 transition-colors p-3 rounded-full"
+                    className="bg-muted hover:bg-[#004E3F]/20 transition-colors p-3 rounded-full"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -128,10 +150,10 @@ export default function Contact() {
                     </svg>
                   </a>
                   <a
-                    href="https://linkedin.com/in/ambar-zara"
+                    href="https://www.linkedin.com/in/aqsa-iftkhar-6357b6356?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-muted hover:bg-primary/20 transition-colors p-3 rounded-full"
+                    className="bg-muted hover:bg-[#004E3F]/20 transition-colors p-3 rounded-full"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -162,6 +184,7 @@ export default function Contact() {
                   <Input
                     type="text"
                     name="name"
+                     className="focus:ring-0 focus:border-[#004E3F] hover:border-[#004E3F]"
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
@@ -173,6 +196,7 @@ export default function Contact() {
                   <Input
                     type="email"
                     name="email"
+                    className="focus:ring-0 focus:border-[#004E3F] hover:border-[#004E3F]"
                     placeholder="Your Email"
                     value={formData.email}
                     onChange={handleChange}
@@ -184,6 +208,7 @@ export default function Contact() {
                   <Input
                     type="text"
                     name="subject"
+                    className="focus:ring-0 focus:border-[#004E3F] hover:border-[#004E3F]"
                     placeholder="Subject"
                     value={formData.subject}
                     onChange={handleChange}
@@ -194,7 +219,8 @@ export default function Contact() {
                 <div>
                   <Textarea
                     name="message"
-                    placeholder="Your Message"
+                    className="focus:ring-0 focus:border-[#004E3F] hover:border-[#004E3F]"
+                     placeholder="Your Message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
@@ -202,7 +228,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                <Button type="submit" className="w-full border border-gray-500 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <span className="flex items-center">
                       <svg
@@ -228,8 +254,8 @@ export default function Contact() {
                       Sending...
                     </span>
                   ) : (
-                    <span className="flex items-center">
-                      <Send size={16} className="mr-2" />
+                    <span className="flex  items-center ">
+                      <Send size={16} className="mr-2 " />
                       Send Message
                     </span>
                   )}

@@ -10,29 +10,28 @@ const experiences = [
   {
     company: "Crective",
     position: "Full Stack Developer",
-    period: "October 2024 - Present",
+    period: "November 2024 - Present",
     location: "OnSite",
     description:
-      "Working on multiple live projects including germanguestpost.com, autopublish.fun, maristochats.fr, joaquinsabina.net, theprominente.de, and theberlinmag.de. Developing responsive front-end interfaces and implementing back-end functionality.",
+      "Working on multiple live projects including germanguestpost.com, autopublish.fun, xn--rezeptetglich-ifb.de, linqbuzz.netlify.app , /papr-blog.netlify.app, and techbios.netlify.app Developing responsive front-end interfaces and implementing back-end functionality.",
     projects: [
       { name: "German Guest Post", url: "https://germanguestpost.com/en" },
       { name: "Auto Publish", url: "https://autopublish.fun/" },
-      { name: "Maristo Chats", url: "https://maristochats.fr/" },
-      { name: "Joaquin Sabina", url: "https://joaquinsabina.net/" },
-      { name: "The Prominente", url: "https://theprominente.de/" },
-      { name: "The Berlin Mag", url: "https://theberlinmag.de/" },
+      { name: "Rezepte Täglich", url: "https://xn--rezeptetglich-ifb.de/" },
+      { name: "Linqbuzz", url: "https://linqbuzz.netlify.app/" },
+      { name: "Papr blog", url: "https://papr-blog.netlify.app/" },
+      { name: "Tech bios", url: "https://techbios.netlify.app/" },
     ],
-    skills: ["React", "Next.js", "Node.js", "Express.js", "Tailwind CSS"],
+    skills: ["React.js", "Next.js", "Node.js", "Express.js","MUI" , "Tailwind CSS"],
   },
   {
-    company: "TheMillionsBit",
+    company: "Smart Web Labs",
     position: "Frontend Developer Intern",
-    period: "August 2024 - October 2024",
-    location: "OnSite",
+    period: "April 2024 - May 2024",
+    location: "Remote",
     description:
-      "Completed internship working on practice projects and contributed to the development of Muhafiz Oxygen's website. Focused on creating responsive user interfaces and implementing design requirements.",
-    projects: [{ name: "Muhafiz Oxygen", url: "https://www.muhafizoxygen.com/" }],
-    skills: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+      "Completed internship working on practice projects . Focused on creating responsive user interfaces and implementing design requirements.",
+    skills: ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS"],
   },
 ]
 
@@ -53,10 +52,10 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-2 text-center">Work Experience</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
+          <div className="w-20 h-1 bg-[#004E3F]  mx-auto mb-12"></div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="relative border-l-2 border-primary/30 pl-8 ml-4">
+            <div className="relative border-l-2 border-[#004E3F]/30 pl-8 ml-4">
               {experiences.map((exp, index) => (
                 <motion.div
                   key={index}
@@ -65,12 +64,12 @@ export default function Experience() {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="mb-12 relative"
                 >
-                  <div className="absolute -left-12 w-6 h-6 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="absolute -left-12 w-6 h-6 bg-[#004E3F] rounded-full border-4 border-[#004E3F]"></div>
                   <Card className="p-6 bg-background/50 backdrop-blur-sm">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                       <div>
                         <h3 className="text-xl font-bold text-foreground">{exp.position}</h3>
-                        <h4 className="text-lg font-medium text-primary">{exp.company}</h4>
+                        <h4 className="text-lg font-medium text-[#004E3F]">{exp.company}</h4>
                       </div>
                       <div className="mt-2 md:mt-0 text-foreground/70">
                         <div className="flex items-center mb-1">
@@ -86,25 +85,26 @@ export default function Experience() {
 
                     <p className="text-foreground/80 mb-4">{exp.description}</p>
 
-                    {exp.projects.length > 0 && (
-                      <div className="mb-4">
-                        <h5 className="font-medium mb-2">Projects:</h5>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {exp.projects.map((project, idx) => (
-                            <li key={idx}>
-                              <a
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[#CBFFDE] hover:underline"
-                              >
-                                {project.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                   {exp.company === "Crective" && exp.projects && exp.projects.length > 0 && (
+  <div className="mb-4">
+    <h5 className="font-medium mb-2">Projects:</h5>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      {exp.projects.map((project, idx) => (
+        <li key={idx}>
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dark:text-[#FED688] hover:underline"
+          >
+            {project.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
 
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill, idx) => (

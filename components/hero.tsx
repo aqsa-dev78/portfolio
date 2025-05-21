@@ -42,26 +42,31 @@ export default function Hero() {
           Full Stack Developer
         </h2>
         <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto md:mx-0">
-          Passionate about creating responsive, user-friendly web applications with modern technologies. Specialized
-          in React, Next.js, and Node.js.
+         Passionate about developing responsive, user-friendly web applications using modern technologies, with expertise in React, Next.js, and Node.js.
         </p>
 
         <div className="flex flex-col md:flex-row items-center gap-4 justify-center md:justify-start">
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]"
+            className=" border border-gray-500 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]"
           >
             <a href="#contact">Get In Touch</a>
           </Button>
-          <Button variant="outline" className="bg-[#0A140E] hover:bg-[#0A140E] border  border-[1px] border-[#CBFFDB] text-[#CBFFDE]" size="lg" asChild>
-            <a href="#projects">View My Work</a>
-          </Button>
+          <Button
+  variant="outline"
+  size="lg"
+  asChild
+  className="bg-transparent border border-[#CBFFDB] text-[#CBFFDB] hover:bg-[#0F2F24]/50 hover:shadow-md backdrop-blur-md transition duration-200"
+>
+  <a href="#projects">View My Work</a>
+</Button>
+
         </div>
 
         <div className="flex items-center gap-4 mt-8 justify-center md:justify-start">
           <a
-            href="https://github.com/ambarzara2772"
+            href="https://github.com/aqsaiftkhar"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground/70 hover:text-[#CBFFDB] transition-colors"
@@ -69,7 +74,7 @@ export default function Hero() {
             <Github size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/ambar-zara"
+            href="https://www.linkedin.com/in/aqsa-iftkhar-6357b6356?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground/70 hover:text-[#CBFFDB] transition-colors"
@@ -77,7 +82,7 @@ export default function Hero() {
             <Linkedin size={24} />
           </a>
           <a
-            href="mailto:ambarzara58@gmail.com"
+            href="mailto:aqsaiftkhar868@gmail.com"
             className="text-foreground/70 hover:text-[#CBFFDB] transition-colors"
           >
             <Mail size={24} />
@@ -88,7 +93,7 @@ export default function Hero() {
   </div>
 
   <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-    <a href="#about" className="text-foreground/50 hover:text-primary transition-colors">
+    <a href="#about" className="text-foreground/50 hover:text-[#79F7CE] transition-colors">
       <ArrowDown size={24} />
     </a>
   </div>

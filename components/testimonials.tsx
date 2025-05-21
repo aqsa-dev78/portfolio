@@ -9,27 +9,28 @@ import { Button } from "@/components/ui/button"
 
 const testimonials = [
   {
-    name: "Sarah Ali",
-    position: "Project Manager at Crective",
+    name: "Areeba Fatima",
+    position: "Frontend Developer at DevSpark",
     content:
-      "Ambar is an exceptional developer who consistently delivers high-quality work. Her attention to detail and problem-solving skills make her a valuable asset to any team.",
-    avatar: "/placeholder.svg?height=100&width=100",
+      "Aqsa’s enthusiasm for learning and clean coding practices make her stand out. She's reliable, creative, and always ready to take on new challenges.",
+    avatar: "/avatars/areeba-fatima.jpg",
   },
   {
-    name: "Qamar Zia",
-    position: "Lead Developer at TheMillionsBit",
+    name: "Bilal Ahmed",
+    position: "Senior Backend Engineer at CodeCraft",
     content:
-      "During her internship, Ambar demonstrated remarkable growth and dedication. She quickly grasped complex concepts and contributed meaningfully to our projects.",
-    avatar: "/placeholder.svg?height=100&width=100",
+      "Aqsa is very efficient in backend integration and database structuring. Her ability to work under pressure and still deliver quality work is commendable.",
+    avatar: "/avatars/bilal-ahmed.jpg",
   },
   {
-    name: "Hussnain Khan",
-    position: "UI/UX Designer",
+    name: "Sana Riaz",
+    position: "Product Owner at NexTech",
     content:
-      "Working with Ambar was a pleasure. She has a keen eye for design implementation and always ensures the final product matches the design specifications perfectly.",
-    avatar: "/placeholder.svg?height=100&width=100",
+      "Aqsa brings a great balance of technical skills and communication. She collaborates well across teams and understands the bigger picture of product development.",
+    avatar: "/avatars/sana-riaz.jpg",
   },
-]
+];
+
 
 export default function Testimonials() {
   const [ref, inView] = useInView({
@@ -57,7 +58,7 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-2 text-center">Testimonials</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
+          <div className="w-20 h-1 bg-[#004E3F] mx-auto mb-12"></div>
 
           <div className="max-w-4xl mx-auto relative">
             <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 z-10">
@@ -65,7 +66,7 @@ export default function Testimonials() {
                 variant="ghost"
                 size="icon"
                 onClick={prevTestimonial}
-                className="rounded-full bg-background/80 backdrop-blur-sm shadow-md"
+                className="rounded-full bg-[#004E3F]/80 backdrop-blur-sm shadow-md"
               >
                 <ChevronLeft size={24} />
               </Button>
@@ -80,20 +81,17 @@ export default function Testimonials() {
                   <div key={index} className="w-full flex-shrink-0 px-4">
                     <Card className="p-8 bg-background/50 backdrop-blur-sm">
                       <div className="flex flex-col items-center text-center">
-                        <div className="mb-6 text-primary">
+                        <div className="mb-6 text-[#004E3F]">
                           <Quote size={40} />
                         </div>
 
                         <p className="text-foreground/80 mb-6 italic">"{testimonial.content}"</p>
 
                         <div className="flex items-center flex-col">
-                          <div className="w-16 h-16 rounded-full overflow-hidden mb-3">
-                            <img
-                              src={testimonial.avatar || "/placeholder.svg"}
-                              alt={testimonial.name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
+                          <div className="w-16 h-16 rounded-full bg-[#004E3F] text-white flex items-center justify-center text-xl font-bold mb-3">
+  {testimonial.name.charAt(0)}
+</div>
+
                           <h4 className="font-bold">{testimonial.name}</h4>
                           <p className="text-foreground/70 text-sm">{testimonial.position}</p>
                         </div>
@@ -109,7 +107,7 @@ export default function Testimonials() {
                 variant="ghost"
                 size="icon"
                 onClick={nextTestimonial}
-                className="rounded-full bg-background/80 backdrop-blur-sm shadow-md"
+                className="rounded-full bg-[#004E3F]/80 backdrop-blur-sm shadow-md"
               >
                 <ChevronRight size={24} />
               </Button>
@@ -121,7 +119,7 @@ export default function Testimonials() {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? "bg-primary" : "bg-primary/30"
+                    index === currentIndex ? "bg-[#004E3F]" : "bg-[#004E3F]/30"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

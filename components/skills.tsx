@@ -12,12 +12,12 @@ const skillCategories = [
     skills: [
       { name: "HTML", level: 90 },
       { name: "CSS", level: 85 },
-      { name: "JavaScript", level: 85 },
+      { name: "JavaScript", level: 70 },
       { name: "React", level: 80 },
-      { name: "Next.js", level: 75 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "Material UI", level: 75 },
-      { name: "Ant Design", level: 70 },
+      { name: "Next.js", level: 70 },
+      { name: "Tailwind CSS", level: 75 },
+      { name: "Material UI", level: 85 },
+      { name: "shadcn ui", level: 70 },
       { name: "Bootstrap", level: 80 },
     ],
   },
@@ -27,10 +27,9 @@ const skillCategories = [
     skills: [
       { name: "Node.js", level: 75 },
       { name: "Express.js", level: 70 },
-      { name: "Adonis.js", level: 70 },
       { name: "RESTful APIs", level: 75 },
       { name: "MongoDB", level: 65 },
-      { name: "SQL", level: 60 },
+      { name: "postgresql", level: 60 },
     ],
   },
   {
@@ -42,7 +41,7 @@ const skillCategories = [
       { name: "Figma", level: 70 },
       { name: "Responsive Design", level: 85 },
       { name: "Web Performance", level: 75 },
-      { name: "SEO Basics", level: 65 },
+     
     ],
   },
 ]
@@ -63,7 +62,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-2 text-center">My Skills</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
+          <div className="w-20 h-1 bg-[#004E3F] mx-auto mb-12"></div>
 
           <div className="max-w-4xl mx-auto">
             <Tabs defaultValue="frontend" className="w-full">
@@ -92,7 +91,7 @@ export default function Skills() {
                           </div>
                           <div className="w-full bg-muted rounded-full h-2.5">
                             <motion.div
-                              className="bg-primary h-2.5 rounded-full"
+                              className="bg-[#004E3F] h-2.5 rounded-full"
                               initial={{ width: 0 }}
                               animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
                               transition={{ duration: 1, delay: 0.2 + index * 0.1 }}

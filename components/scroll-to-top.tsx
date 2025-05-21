@@ -31,7 +31,7 @@ export default function ScrollToTop() {
     <div
       className={`fixed bottom-6 right-6 z-40 transition-opacity duration-300 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
-      <Button onClick={scrollToTop} size="icon" className="rounded-full shadow-lg" aria-label="Scroll to top">
+      <Button onClick={scrollToTop} size="icon" className="  rounded-full   border border-gray-700 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)] " aria-label="Scroll to top">
         <ArrowUp size={20} />
       </Button>
     </div>

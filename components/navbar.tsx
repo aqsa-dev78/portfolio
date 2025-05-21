@@ -48,11 +48,12 @@ export default function Navbar() {
             </Link>
           ))}
           <ThemeToggle />
-          <Button asChild className="bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)] text-white px-6">
-  <a href="#" id="resume-button">
+        <Button asChild className="border border-gray-500 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)] text-white px-6">
+  <a href="/resume.pdf" id="resume-button" target="_blank" rel="noopener noreferrer">
     Resume
   </a>
 </Button>
+
 
         </nav>
 
@@ -73,17 +74,18 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-foreground/80 hover:text-primary transition-colors py-2"
+                className="text-foreground/80 hover:text-[#CBFFDB] transition-colors py-2"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <Button asChild className="w-full">
-              <a href="#" id="mobile-resume-button">
-                Resume
-              </a>
-            </Button>
+            <Button asChild className="w-full border border-white bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]">
+  <a href="/resume.pdf" id="mobile-resume-button" target="_blank" rel="noopener noreferrer">
+    Resume
+  </a>
+</Button>
+
           </div>
         </div>
       )}

@@ -17,18 +17,23 @@ interface ProjectCardProps {
   }
 }
 
+
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [showDetails, setShowDetails] = useState(false)
 
   return (
     <>
-      <Card className="h-full flex flex-col overflow-hidden group">
+      {/* <Card className="h-full flex flex-col overflow-hidden group"> */}
+      <Card className="h-full flex flex-col overflow-hidden group bg-gradient-to-b from-[rgba(39,102,75,0.6)] via-[rgba(34,82,62,0.4)] to-[rgba(3,12,7,0.4)] backdrop-blur-md border border-white/10 rounded-xl shadow-lg">
+
         <div className="relative overflow-hidden">
           <img
             src={project.image || "/placeholder.svg"}
             alt={project.title}
+            
             className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
           />
+          
           <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
 
@@ -37,7 +42,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <p className="text-foreground/70 mb-4">{project.description}</p>
           <div className="flex flex-wrap gap-2 mt-auto">
             {project.technologies.map((tech, idx) => (
-              <Badge key={idx} variant="outline">
+              <Badge key={idx} variant="outline" className="border border-white">
                 {tech}
               </Badge>
             ))}
@@ -47,7 +52,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <CardFooter className="p-6 pt-0">
           <div className="flex gap-3">
             <Button asChild size="sm" variant="outline">
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-white gap-2 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]">
                 <ExternalLink size={16} />
                 Live Demo
               </a>
@@ -57,7 +62,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 size="sm"
                 variant="ghost"
                 onClick={() => setShowDetails(true)}
-                className="flex items-center gap-2"
+                className="flex items-center text-white gap-2 border border-white bg-[#0A140E] hover:bg-[#0A140E]"
               >
                 <Info size={16} />
                 Details
@@ -97,7 +102,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <p className="text-foreground/80 mb-4">{project.longDescription}</p>
 
               <Button asChild>
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]">
                   <ExternalLink size={16} />
                   Visit Project
                 </a>
