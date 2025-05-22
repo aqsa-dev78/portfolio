@@ -5,7 +5,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
 import Navbar from "@/components/navbar"
-
+import hero from '../public/hero.png'
+import Image from "next/image"
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
 
@@ -19,49 +20,50 @@ export default function Hero() {
  <section id="home" className="relative min-h-screen flex items-center">
   <Navbar />
 
-  {/* Background - white for light, gradient for dark */}
+  {/* Background */}
   <div className="absolute inset-0 bg-white dark:bg-[#030A06]">
     <div className="absolute inset-0 hidden dark:block bg-grid-white/[0.05] bg-[size:60px_60px]" />
   </div>
 
-  <div className="container mx-auto px-4 pt-20 relative z-10">
-    <div className="max-w-3xl mx-auto text-center md:text-left">
+  <div className="container mx-auto md:pl-20   relative z-10">
+    <div className="flex flex-col pt-20 md:flex-row items-center justify-between gap-10">
+      {/* Left Side - Text Content */}
       <motion.div
+        className="md:w-1/2 text-center md:text-left"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-         <span className="bg-gradient-to-r from-[#8FFFC1] via-[#72F5D2] to-[#A8FFE0] bg-clip-text text-transparent">
-  Hello, I'm
-</span>
- <br />
+          <span className="bg-gradient-to-r from-[#8FFFC1] via-[#72F5D2] to-[#A8FFE0] bg-clip-text text-transparent">
+            Hello, I'm
+          </span>
+          <br />
           Aqsa Iftkhar
         </h1>
         <h2 className="text-2xl md:text-3xl font-medium text-foreground/80 mb-6">
           Full Stack Developer
         </h2>
         <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto md:mx-0">
-         Passionate about developing responsive, user-friendly web applications using modern technologies, with expertise in React, Next.js, and Node.js.
+          Passionate about developing responsive, user-friendly web applications using modern technologies, with expertise in React, Next.js, and Node.js.
         </p>
 
         <div className="flex flex-col md:flex-row items-center gap-4 justify-center md:justify-start">
           <Button
             asChild
             size="lg"
-            className=" border border-gray-500 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]"
+            className="border border-gray-500 bg-gradient-to-r from-[rgba(0,18,15,1)] via-[rgba(2,90,74,1)] to-[rgba(0,18,15,1)]"
           >
             <a href="#contact">Get In Touch</a>
           </Button>
           <Button
-  variant="outline"
-  size="lg"
-  asChild
-  className="bg-transparent border border-[#CBFFDB] text-[#CBFFDB] hover:bg-[#0F2F24]/50 hover:shadow-md backdrop-blur-md transition duration-200"
->
-  <a href="#projects">View My Work</a>
-</Button>
-
+            variant="outline"
+            size="lg"
+            asChild
+            className="bg-transparent border border-[#CBFFDB] text-[#CBFFDB] hover:bg-[#0F2F24]/50 hover:shadow-md backdrop-blur-md transition duration-200"
+          >
+            <a href="#projects">View My Work</a>
+          </Button>
         </div>
 
         <div className="flex items-center gap-4 mt-8 justify-center md:justify-start">
@@ -74,7 +76,7 @@ export default function Hero() {
             <Github size={24} />
           </a>
           <a
-            href="https://www.linkedin.com/in/aqsa-iftkhar-6357b6356?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            href="https://www.linkedin.com/in/aqsa-iftkhar-6357b6356"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground/70 hover:text-[#CBFFDB] transition-colors"
@@ -89,6 +91,26 @@ export default function Hero() {
           </a>
         </div>
       </motion.div>
+
+      {/* Right Side - Image */}
+  <motion.div
+  className="md:w-1/2 flex justify-center"
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: false, amount: 0.5 }} // Animate every time it's 50% in view
+  transition={{ duration: 0.4 }}
+>
+  <Image
+    src="/hero.png"
+    alt="Aqsa Iftkhar"
+    width={400}
+    height={400}
+    className="rounded-xl"
+  />
+</motion.div>
+
+
+      
     </div>
   </div>
 
@@ -98,6 +120,7 @@ export default function Hero() {
     </a>
   </div>
 </section>
+
 
 
   )
